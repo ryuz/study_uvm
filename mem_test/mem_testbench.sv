@@ -1,9 +1,13 @@
-module mem_test;
+
+`include "memory.sv"
+`include "mem_if.sv"
+
+module mem_testbench;
 
     `include "uvm_macros.svh"
     import uvm_pkg::*;
     `include "mem_model.svh"
-    `include "mem_model_test.sv"
+    `include "mem_test.sv"
     
     bit     clk;
     always #5   clk = ~clk;

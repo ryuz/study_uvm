@@ -1,16 +1,17 @@
-SRCS = ../mem_test.sv ../memory.sv ../mem_if.sv
+TOP_MODULE = mem_testbench
+SRCS       = ../mem_testbench.sv
 
 .PHONY: all
 all: build run
 
 .PHONY: build
 build:
-	xvlog -sv $(SRCS) -L uvm --include ../model/
-	xelab mem_test -timescale 1ns/100ps -L uvm
+	xvlog -sv $(SRCS) -L uvm --include ../model
+	xelab $(TOP_MODULE) -L uvm -timescale 1ns/1ps
 
 .PHONY: run
 run:
-	xsim mem_test -R --testplusarg "UVM_TESTNAME=mem_model_test"
+	xsim $(TOP_MODULE) -R --testplusarg "UVM_TESTNAME=mem_test"
 
 .PHONY: clean
 clean:

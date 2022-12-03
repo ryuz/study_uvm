@@ -1,10 +1,10 @@
-class mem_model_test extends uvm_test;
-    `uvm_component_utils(mem_model_test)
+class mem_test extends uvm_test;
+    `uvm_component_utils(mem_test)
 
     mem_model_env env;
     mem_sequence  seq;
 
-    function new(string name = "mem_model_test", uvm_component parent=null);
+    function new(string name = "mem_test", uvm_component parent=null);
         super.new(name, parent);
     endfunction
 

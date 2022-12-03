@@ -17,5 +17,6 @@ class mem_sequence extends uvm_sequence#(mem_seq_item);
             get_response(rsp);
         end
     endtask
-  
+    
+    
 endclass
