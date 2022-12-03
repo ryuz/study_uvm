@@ -1,12 +1,10 @@
 module mem_test;
-  
-    `define DRIV_IF vif.DRIVER.driver_cb
 
     `include "uvm_macros.svh"
     import uvm_pkg::*;
     `include "mem_model.svh"
     `include "mem_model_test.sv"
-  
+    
     bit     clk;
     always #5   clk = ~clk;
   

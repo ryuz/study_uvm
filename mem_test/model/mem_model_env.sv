@@ -9,7 +9,6 @@ class mem_model_env extends uvm_env;
     endfunction
 
     function void build_phase(uvm_phase phase);
-        $display("!!!!!!!!!!mem_model_env run_phase!!!!!!!!!!!!");
         super.build_phase(phase);
 
         mem_agnt = mem_agent::type_id::create("mem_agnt", this);
