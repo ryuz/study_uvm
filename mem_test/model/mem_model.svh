@@ -1,0 +1,8 @@
+`include "mem_sequencer.sv"
+`include "mem_seq_item.sv"
+`include "mem_sequence.sv"
+`include "mem_driver.sv"
+`include "mem_monitor.sv"
+`include "mem_agent.sv"
+`include "mem_scoreboard.sv"
+`include "mem_model_env.sv"
