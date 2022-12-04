@@ -17,12 +17,12 @@ class mem_scoreboard extends uvm_scoreboard;
         end
     endfunction : new
 
-    virtual function void build_phase(uvm_phase phase);
+    function void build_phase(uvm_phase phase);
         super.build_phase(phase);
         item_collected_export = new("item_collected_export", this);
-    endfunction: build_phase
+    endfunction : build_phase
   
-    virtual function void write(mem_seq_item pkt);
+    function void write(mem_seq_item pkt);
         if ( rd_en ) begin
             assert ( pkt.rdata == mem[rd_addr] ) begin
                 `uvm_info(get_type_name(),

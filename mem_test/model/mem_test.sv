@@ -6,19 +6,19 @@ class mem_test extends uvm_test;
 
     function new(string name = "mem_test", uvm_component parent=null);
         super.new(name, parent);
-    endfunction
+    endfunction : new
 
     function void build_phase(uvm_phase phase);
         super.build_phase(phase);
 
         env = mem_model_env::type_id::create("env", this);
         seq = mem_sequence::type_id::create("seq");
-    endfunction
+    endfunction : build_phase
 
     task run_phase(uvm_phase phase);
         phase.raise_objection(this);
         seq.start(env.mem_agnt.sequencer);
         phase.drop_objection(this);
-    endtask
+    endtask : run_phase
 
 endclass

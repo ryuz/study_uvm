@@ -12,14 +12,14 @@ class mem_monitor extends uvm_monitor;
         super.new(name, parent);
         trans_collected = new();
         item_collected_port = new("item_collected_port", this);
-    endfunction
+    endfunction : new
 
-    virtual function void build_phase(uvm_phase phase);
+    function void build_phase(uvm_phase phase);
         super.build_phase(phase);
         if ( !uvm_config_db#(virtual mem_if)::get(this, "", "vif", vif) ) begin
             `uvm_fatal("NOVIF",{"virtual interface must be set for: ", get_full_name(), ".vif"});
         end
-    endfunction
+    endfunction : build_phase
 
     virtual task run_phase(uvm_phase phase);
         forever begin
@@ -33,7 +33,7 @@ class mem_monitor extends uvm_monitor;
                 item_collected_port.write(trans_collected);
             end
         end 
-    endtask
+    endtask : run_phase
 
 endclass
 

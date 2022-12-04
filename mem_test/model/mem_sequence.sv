@@ -18,5 +18,4 @@ class mem_sequence extends uvm_sequence#(mem_seq_item);
         end
     endtask
     
-    
 endclass
